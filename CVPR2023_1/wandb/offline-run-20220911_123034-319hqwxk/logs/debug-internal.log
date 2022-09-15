@@ -1,0 +1,16 @@
+2022-09-11 12:30:34,303 INFO    StreamThr :2394 [internal.py:wandb_internal():88] W&B internal server running at pid: 2394, started at: 2022-09-11 12:30:34.302645
+2022-09-11 12:30:34,306 DEBUG   HandlerThread:2394 [handler.py:handle_request():138] handle_request: status
+2022-09-11 12:30:34,306 DEBUG   SenderThread:2394 [sender.py:send_request():315] send_request: status
+2022-09-11 12:30:34,310 INFO    WriterThread:2394 [datastore.py:open_for_write():75] open: /notebooks/CVPR2023/wandb/offline-run-20220911_123034-319hqwxk/run-319hqwxk.wandb
+2022-09-11 12:30:34,326 DEBUG   HandlerThread:2394 [handler.py:handle_request():138] handle_request: run_start
+2022-09-11 12:30:34,337 DEBUG   HandlerThread:2394 [meta.py:__init__():34] meta init
+2022-09-11 12:30:34,337 DEBUG   HandlerThread:2394 [meta.py:__init__():49] meta init done
+2022-09-11 12:30:34,337 DEBUG   HandlerThread:2394 [meta.py:probe():215] probe
+2022-09-11 12:30:34,344 DEBUG   HandlerThread:2394 [meta.py:_setup_git():205] setup git
+2022-09-11 12:30:34,362 DEBUG   HandlerThread:2394 [meta.py:_setup_git():212] setup git done
+2022-09-11 12:30:34,362 DEBUG   HandlerThread:2394 [meta.py:_save_pip():53] save pip
+2022-09-11 12:30:34,363 DEBUG   HandlerThread:2394 [meta.py:_save_pip():67] save pip done
+2022-09-11 12:30:34,363 DEBUG   HandlerThread:2394 [meta.py:probe():253] probe done
+2022-09-11 12:30:43,316 WARNING StreamThr :2394 [internal.py:is_dead():385] Internal process exiting, parent pid 2372 disappeared
+2022-09-11 12:30:43,316 ERROR   StreamThr :2394 [internal.py:wandb_internal():147] Internal process shutdown.
+2022-09-11 12:30:43,328 INFO    MainThread:2394 [internal.py:handle_exit():78] Internal process exited

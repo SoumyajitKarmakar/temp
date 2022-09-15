@@ -1,0 +1,617 @@
+Not using distributed mode
+[09:36:21.819974] job dir: /notebooks/CVPR2023
+[09:36:21.820198] Namespace(batch_size=64,
+epochs=100,
+accum_iter=1,
+model='mae_vit_tiny',
+norm_pix_loss=False,
+dataset=None,
+input_size=28,
+patch_size=2,
+mask_ratio=0.75,
+lambda_weight=0.9,
+drop_path=0.1,
+clip_grad=None,
+weight_decay=0.05,
+lr=0.01,
+blr=0.001,
+layer_decay=0.75,
+min_lr=1e-06,
+warmup_epochs=5,
+color_jitter=None,
+aa='rand-m9-mstd0.5-inc1',
+smoothing=0.1,
+reprob=0.25,
+remode='pixel',
+recount=1,
+resplit=False,
+mixup=0,
+cutmix=0,
+cutmix_minmax=None,
+mixup_prob=1.0,
+mixup_switch_prob=0.5,
+mixup_mode='batch',
+finetune='',
+global_pool=True,
+data_path='/datasets01/imagenet_full_size/061417/',
+nb_classes=7,
+output_dir='./output_dir',
+log_dir='./output_dir',
+device='cuda',
+seed=0,
+resume='',
+start_epoch=0,
+eval=False,
+dist_eval=False,
+num_workers=10,
+pin_mem=True,
+world_size=1,
+local_rank=-1,
+dist_on_itp=False,
+dist_url='env://',
+distributed=False)
+[09:36:21.853339] Using downloaded and verified file: /root/.medmnist/dermamnist.npz
+[09:36:21.986321] Using downloaded and verified file: /root/.medmnist/dermamnist.npz
+[09:36:22.015964] Dataset DermaMNIST (dermamnist)
+    Number of datapoints: 7007
+    Root location: /root/.medmnist
+    Split: train
+    Task: multi-class
+    Number of channels: 3
+    Meaning of labels: {'0': 'actinic keratoses and intraepithelial carcinoma', '1': 'basal cell carcinoma', '2': 'benign keratosis-like lesions', '3': 'dermatofibroma', '4': 'melanoma', '5': 'melanocytic nevi', '6': 'vascular lesions'}
+    Number of samples: {'train': 7007, 'val': 1003, 'test': 2005}
+    Description: The DermaMNIST is based on the HAM10000, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. The dataset consists of 10,015 dermatoscopic images categorized as 7 different diseases, formulized as a multi-class classification task. We split the images into training, validation and test set with a ratio of 7:1:2. The source images of 3×600×450 are resized into 3×28×28.
+    License: CC BY 4.0
+[09:36:22.016370] Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x7f02bfabb9a0>
+/usr/local/lib/python3.9/dist-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+[09:36:25.179246] Model = MaskedAutoencoderViT(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 192, kernel_size=(2, 2), stride=(2, 2))
+    (norm): Identity()
+  )
+  (blocks): ModuleList(
+    (0): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (1): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (2): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (3): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (4): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (5): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (6): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (7): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (8): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (9): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (10): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (11): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+  )
+  (norm): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+  (decoder_embed): Linear(in_features=192, out_features=128, bias=True)
+  (decoder_blocks): ModuleList(
+    (0): Block(
+      (norm1): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=128, out_features=384, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=128, out_features=128, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=128, out_features=512, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=512, out_features=128, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+    (1): Block(
+      (norm1): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=128, out_features=384, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=128, out_features=128, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (ls1): Identity()
+      (drop_path1): Identity()
+      (norm2): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=128, out_features=512, bias=True)
+        (act): GELU(approximate=none)
+        (drop1): Dropout(p=0.0, inplace=False)
+        (fc2): Linear(in_features=512, out_features=128, bias=True)
+        (drop2): Dropout(p=0.0, inplace=False)
+      )
+      (ls2): Identity()
+      (drop_path2): Identity()
+    )
+  )
+  (decoder_norm): LayerNorm((128,), eps=1e-06, elementwise_affine=True)
+  (decoder_pred): Linear(in_features=128, out_features=12, bias=True)
+  (head): Linear(in_features=192, out_features=7, bias=True)
+)
+[09:36:25.179805] number of params (M): 5.77
+[09:36:25.179958] base lr: 4.00e-02
+[09:36:25.180162] actual lr: 1.00e-02
+[09:36:25.180508] accumulate grad iterations: 1
+[09:36:25.180911] effective batch size: 64
+[09:36:25.182619] criterion = LabelSmoothingCrossEntropy()
+[09:36:25.182898] Start training for 100 epochs
+[09:36:25.184488] log_dir: ./output_dir
+[09:36:28.046193] Epoch: [0]  [  0/109]  eta: 0:05:11  lr: 0.000000  training_loss: 4.3100 (4.3100)  mae_loss: 0.2062 (0.2062)  classification_loss: 4.1037 (4.1037)  time: 2.8606  data: 0.3747  max mem: 2735
+[09:36:30.056606] Epoch: [0]  [ 20/109]  eta: 0:00:20  lr: 0.000367  training_loss: 1.4411 (1.8294)  mae_loss: 0.0642 (0.0904)  classification_loss: 1.3769 (1.7389)  time: 0.1004  data: 0.0002  max mem: 2799
+[09:36:32.052768] Epoch: [0]  [ 40/109]  eta: 0:00:11  lr: 0.000734  training_loss: 1.2594 (1.5537)  mae_loss: 0.0343 (0.0634)  classification_loss: 1.2233 (1.4903)  time: 0.0998  data: 0.0001  max mem: 2799
+[09:36:34.058053] Epoch: [0]  [ 60/109]  eta: 0:00:07  lr: 0.001101  training_loss: 1.1832 (1.4427)  mae_loss: 0.0298 (0.0526)  classification_loss: 1.1530 (1.3901)  time: 0.1002  data: 0.0002  max mem: 2799
+[09:36:36.059470] Epoch: [0]  [ 80/109]  eta: 0:00:03  lr: 0.001468  training_loss: 1.2006 (1.3904)  mae_loss: 0.0284 (0.0467)  classification_loss: 1.1702 (1.3437)  time: 0.1000  data: 0.0001  max mem: 2799
+[09:36:38.057521] Epoch: [0]  [100/109]  eta: 0:00:01  lr: 0.001835  training_loss: 1.1694 (1.3540)  mae_loss: 0.0252 (0.0427)  classification_loss: 1.1443 (1.3113)  time: 0.0998  data: 0.0001  max mem: 2799
+[09:36:38.852185] Epoch: [0]  [108/109]  eta: 0:00:00  lr: 0.001982  training_loss: 1.1770 (1.3476)  mae_loss: 0.0248 (0.0414)  classification_loss: 1.1457 (1.3062)  time: 0.0995  data: 0.0001  max mem: 2799
+[09:36:38.926902] Epoch: [0] Total time: 0:00:13 (0.1261 s / it)
+[09:36:38.927250] Averaged stats: lr: 0.001982  training_loss: 1.1770 (1.3476)  mae_loss: 0.0248 (0.0414)  classification_loss: 1.1457 (1.3062)
+[09:36:41.061611] Test:  [ 0/32]  eta: 0:00:18  testing_loss: 1.2570 (1.2570)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5681  data: 0.5465  max mem: 2799
+[09:36:41.249899] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1978 (1.1677)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0686  data: 0.0498  max mem: 2799
+[09:36:41.435931] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1819 (1.1896)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0186  data: 0.0001  max mem: 2799
+[09:36:41.621016] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1819 (1.1671)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0184  data: 0.0001  max mem: 2799
+[09:36:41.713717] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1819 (1.1703)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0221  data: 0.0001  max mem: 2799
+[09:36:41.844313] Test: Total time: 0:00:01 (0.0422 s / it)
+[09:36:41.844684] * Acc@1 66.883 Acc@5 97.406 loss 1.170
+[09:36:41.844920] Accuracy of the network on the 2005 test images: 66.9%
+[09:36:41.845032] Max accuracy: 66.88%
+[09:36:42.234747] log_dir: ./output_dir
+[09:36:42.906185] Epoch: [1]  [  0/109]  eta: 0:01:13  lr: 0.002000  training_loss: 1.0916 (1.0916)  mae_loss: 0.0176 (0.0176)  classification_loss: 1.0740 (1.0740)  time: 0.6699  data: 0.5494  max mem: 2802
+[09:36:44.911478] Epoch: [1]  [ 20/109]  eta: 0:00:11  lr: 0.002367  training_loss: 1.2056 (1.1732)  mae_loss: 0.0201 (0.0199)  classification_loss: 1.1844 (1.1534)  time: 0.1002  data: 0.0001  max mem: 2802
+[09:36:46.907859] Epoch: [1]  [ 40/109]  eta: 0:00:07  lr: 0.002734  training_loss: 1.2247 (1.1995)  mae_loss: 0.0200 (0.0199)  classification_loss: 1.2055 (1.1796)  time: 0.0998  data: 0.0002  max mem: 2802
+[09:36:48.905342] Epoch: [1]  [ 60/109]  eta: 0:00:05  lr: 0.003101  training_loss: 1.1831 (1.2002)  mae_loss: 0.0207 (0.0203)  classification_loss: 1.1613 (1.1799)  time: 0.0998  data: 0.0001  max mem: 2802
+[09:36:50.914419] Epoch: [1]  [ 80/109]  eta: 0:00:03  lr: 0.003468  training_loss: 1.1933 (1.2036)  mae_loss: 0.0200 (0.0202)  classification_loss: 1.1722 (1.1834)  time: 0.1004  data: 0.0001  max mem: 2802
+[09:36:52.922051] Epoch: [1]  [100/109]  eta: 0:00:00  lr: 0.003835  training_loss: 1.1225 (1.1958)  mae_loss: 0.0209 (0.0203)  classification_loss: 1.1040 (1.1755)  time: 0.1003  data: 0.0003  max mem: 2802
+[09:36:53.723826] Epoch: [1]  [108/109]  eta: 0:00:00  lr: 0.003982  training_loss: 1.1296 (1.1994)  mae_loss: 0.0212 (0.0203)  classification_loss: 1.1040 (1.1791)  time: 0.1002  data: 0.0003  max mem: 2802
+[09:36:53.862303] Epoch: [1] Total time: 0:00:11 (0.1067 s / it)
+[09:36:53.862743] Averaged stats: lr: 0.003982  training_loss: 1.1296 (1.1994)  mae_loss: 0.0212 (0.0203)  classification_loss: 1.1040 (1.1791)
+[09:36:54.428858] Test:  [ 0/32]  eta: 0:00:18  testing_loss: 1.1496 (1.1496)  acc1: 64.0625 (64.0625)  acc5: 95.3125 (95.3125)  time: 0.5626  data: 0.5430  max mem: 2802
+[09:36:54.618604] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1286 (1.0981)  acc1: 65.6250 (66.4773)  acc5: 96.8750 (97.3011)  time: 0.0683  data: 0.0495  max mem: 2802
+[09:36:54.804648] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.0927 (1.1184)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0187  data: 0.0001  max mem: 2802
+[09:36:54.990776] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.0927 (1.1070)  acc1: 67.1875 (66.9355)  acc5: 96.8750 (97.1774)  time: 0.0185  data: 0.0000  max mem: 2802
+[09:36:54.999011] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1259 (1.1083)  acc1: 67.1875 (66.8828)  acc5: 96.8750 (97.1571)  time: 0.0180  data: 0.0000  max mem: 2802
+[09:36:55.141404] Test: Total time: 0:00:01 (0.0399 s / it)
+[09:36:55.141805] * Acc@1 66.883 Acc@5 97.157 loss 1.108
+[09:36:55.142011] Accuracy of the network on the 2005 test images: 66.9%
+[09:36:55.142154] Max accuracy: 66.88%
+[09:36:55.149172] log_dir: ./output_dir
+[09:36:55.841038] Epoch: [2]  [  0/109]  eta: 0:01:15  lr: 0.004000  training_loss: 1.0418 (1.0418)  mae_loss: 0.0190 (0.0190)  classification_loss: 1.0228 (1.0228)  time: 0.6908  data: 0.5816  max mem: 2802
+[09:36:57.872285] Epoch: [2]  [ 20/109]  eta: 0:00:11  lr: 0.004367  training_loss: 1.1549 (1.1584)  mae_loss: 0.0213 (0.0214)  classification_loss: 1.1328 (1.1370)  time: 0.1015  data: 0.0001  max mem: 2802
+[09:36:59.907118] Epoch: [2]  [ 40/109]  eta: 0:00:08  lr: 0.004734  training_loss: 1.2039 (1.1882)  mae_loss: 0.0214 (0.0215)  classification_loss: 1.1837 (1.1667)  time: 0.1017  data: 0.0002  max mem: 2802
+[09:37:01.931060] Epoch: [2]  [ 60/109]  eta: 0:00:05  lr: 0.005101  training_loss: 1.1802 (1.1924)  mae_loss: 0.0225 (0.0223)  classification_loss: 1.1558 (1.1701)  time: 0.1011  data: 0.0002  max mem: 2802
+[09:37:03.950399] Epoch: [2]  [ 80/109]  eta: 0:00:03  lr: 0.005468  training_loss: 1.2136 (1.1949)  mae_loss: 0.0195 (0.0217)  classification_loss: 1.1865 (1.1731)  time: 0.1009  data: 0.0002  max mem: 2802
+[09:37:05.978382] Epoch: [2]  [100/109]  eta: 0:00:00  lr: 0.005835  training_loss: 1.1503 (1.1969)  mae_loss: 0.0319 (0.0236)  classification_loss: 1.1232 (1.1733)  time: 0.1013  data: 0.0002  max mem: 2802
+[09:37:06.784893] Epoch: [2]  [108/109]  eta: 0:00:00  lr: 0.005982  training_loss: 1.1852 (1.2026)  mae_loss: 0.0358 (0.0243)  classification_loss: 1.1541 (1.1783)  time: 0.1012  data: 0.0002  max mem: 2802
+[09:37:06.937326] Epoch: [2] Total time: 0:00:11 (0.1081 s / it)
+[09:37:06.937720] Averaged stats: lr: 0.005982  training_loss: 1.1852 (1.2026)  mae_loss: 0.0358 (0.0243)  classification_loss: 1.1541 (1.1783)
+[09:37:07.488312] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.3704 (1.3704)  acc1: 64.0625 (64.0625)  acc5: 93.7500 (93.7500)  time: 0.5475  data: 0.5277  max mem: 2802
+[09:37:07.680784] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.3421 (1.3108)  acc1: 65.6250 (66.4773)  acc5: 96.8750 (95.5966)  time: 0.0671  data: 0.0481  max mem: 2802
+[09:37:07.868569] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.3244 (1.3281)  acc1: 67.1875 (66.1458)  acc5: 95.3125 (95.1637)  time: 0.0189  data: 0.0001  max mem: 2802
+[09:37:08.058021] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.3057 (1.3167)  acc1: 67.1875 (66.9355)  acc5: 95.3125 (95.5141)  time: 0.0187  data: 0.0001  max mem: 2802
+[09:37:08.066659] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.3057 (1.3181)  acc1: 67.1875 (66.8828)  acc5: 95.3125 (95.5611)  time: 0.0182  data: 0.0001  max mem: 2802
+[09:37:08.208661] Test: Total time: 0:00:01 (0.0396 s / it)
+[09:37:08.209936] * Acc@1 66.883 Acc@5 95.561 loss 1.318
+[09:37:08.210168] Accuracy of the network on the 2005 test images: 66.9%
+[09:37:08.210300] Max accuracy: 66.88%
+[09:37:08.225919] log_dir: ./output_dir
+[09:37:08.929390] Epoch: [3]  [  0/109]  eta: 0:01:16  lr: 0.006000  training_loss: 1.1940 (1.1940)  mae_loss: 0.0338 (0.0338)  classification_loss: 1.1602 (1.1602)  time: 0.7024  data: 0.5925  max mem: 2802
+[09:37:10.951258] Epoch: [3]  [ 20/109]  eta: 0:00:11  lr: 0.006367  training_loss: 1.2445 (1.2414)  mae_loss: 0.0315 (0.0319)  classification_loss: 1.2134 (1.2095)  time: 0.1010  data: 0.0002  max mem: 2802
+[09:37:12.970524] Epoch: [3]  [ 40/109]  eta: 0:00:07  lr: 0.006734  training_loss: 1.2331 (1.2416)  mae_loss: 0.0317 (0.0316)  classification_loss: 1.2038 (1.2100)  time: 0.1009  data: 0.0002  max mem: 2802
+[09:37:14.978517] Epoch: [3]  [ 60/109]  eta: 0:00:05  lr: 0.007101  training_loss: 1.2090 (1.2378)  mae_loss: 0.0303 (0.0312)  classification_loss: 1.1810 (1.2066)  time: 0.1003  data: 0.0002  max mem: 2802
+[09:37:16.989816] Epoch: [3]  [ 80/109]  eta: 0:00:03  lr: 0.007468  training_loss: 1.2236 (1.2358)  mae_loss: 0.0275 (0.0304)  classification_loss: 1.1966 (1.2054)  time: 0.1005  data: 0.0002  max mem: 2802
+[09:37:19.012171] Epoch: [3]  [100/109]  eta: 0:00:00  lr: 0.007835  training_loss: 1.1986 (1.2335)  mae_loss: 0.0292 (0.0303)  classification_loss: 1.1671 (1.2032)  time: 0.1011  data: 0.0002  max mem: 2802
+[09:37:19.813361] Epoch: [3]  [108/109]  eta: 0:00:00  lr: 0.007982  training_loss: 1.1915 (1.2339)  mae_loss: 0.0301 (0.0303)  classification_loss: 1.1636 (1.2037)  time: 0.1006  data: 0.0001  max mem: 2802
+[09:37:19.949166] Epoch: [3] Total time: 0:00:11 (0.1076 s / it)
+[09:37:19.949561] Averaged stats: lr: 0.007982  training_loss: 1.1915 (1.2339)  mae_loss: 0.0301 (0.0303)  classification_loss: 1.1636 (1.2037)
+[09:37:20.507584] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.2314 (1.2314)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5546  data: 0.5346  max mem: 2802
+[09:37:20.698004] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1871 (1.1667)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0676  data: 0.0487  max mem: 2802
+[09:37:20.885954] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1871 (1.1853)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0188  data: 0.0001  max mem: 2802
+[09:37:21.072879] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1586 (1.1655)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:37:21.081331] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1586 (1.1693)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0181  data: 0.0000  max mem: 2802
+[09:37:21.222993] Test: Total time: 0:00:01 (0.0397 s / it)
+[09:37:21.223340] * Acc@1 66.883 Acc@5 97.406 loss 1.169
+[09:37:21.223567] Accuracy of the network on the 2005 test images: 66.9%
+[09:37:21.223749] Max accuracy: 66.88%
+[09:37:21.828037] log_dir: ./output_dir
+[09:37:22.523641] Epoch: [4]  [  0/109]  eta: 0:01:15  lr: 0.008000  training_loss: 1.0728 (1.0728)  mae_loss: 0.0297 (0.0297)  classification_loss: 1.0430 (1.0430)  time: 0.6942  data: 0.5796  max mem: 2802
+[09:37:24.539868] Epoch: [4]  [ 20/109]  eta: 0:00:11  lr: 0.008367  training_loss: 1.2027 (1.1835)  mae_loss: 0.0301 (0.0305)  classification_loss: 1.1750 (1.1530)  time: 0.1007  data: 0.0002  max mem: 2802
+[09:37:26.541010] Epoch: [4]  [ 40/109]  eta: 0:00:07  lr: 0.008734  training_loss: 1.2314 (1.2057)  mae_loss: 0.0275 (0.0291)  classification_loss: 1.1999 (1.1767)  time: 0.1000  data: 0.0002  max mem: 2802
+[09:37:28.539529] Epoch: [4]  [ 60/109]  eta: 0:00:05  lr: 0.009101  training_loss: 1.1818 (1.2056)  mae_loss: 0.0250 (0.0278)  classification_loss: 1.1584 (1.1778)  time: 0.0999  data: 0.0001  max mem: 2802
+[09:37:30.540426] Epoch: [4]  [ 80/109]  eta: 0:00:03  lr: 0.009468  training_loss: 1.1910 (1.2065)  mae_loss: 0.0202 (0.0259)  classification_loss: 1.1745 (1.1805)  time: 0.1000  data: 0.0002  max mem: 2802
+[09:37:32.539966] Epoch: [4]  [100/109]  eta: 0:00:00  lr: 0.009835  training_loss: 1.1975 (1.2089)  mae_loss: 0.0185 (0.0245)  classification_loss: 1.1787 (1.1844)  time: 0.0999  data: 0.0002  max mem: 2802
+[09:37:33.338041] Epoch: [4]  [108/109]  eta: 0:00:00  lr: 0.009982  training_loss: 1.1855 (1.2109)  mae_loss: 0.0177 (0.0239)  classification_loss: 1.1693 (1.1870)  time: 0.0997  data: 0.0002  max mem: 2802
+[09:37:33.479689] Epoch: [4] Total time: 0:00:11 (0.1069 s / it)
+[09:37:33.480280] Averaged stats: lr: 0.009982  training_loss: 1.1855 (1.2109)  mae_loss: 0.0177 (0.0239)  classification_loss: 1.1693 (1.1870)
+[09:37:34.050547] Test:  [ 0/32]  eta: 0:00:18  testing_loss: 1.2341 (1.2341)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5672  data: 0.5474  max mem: 2802
+[09:37:34.240648] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.2081 (1.1710)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0687  data: 0.0499  max mem: 2802
+[09:37:34.428007] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1601 (1.1810)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0188  data: 0.0001  max mem: 2802
+[09:37:34.615482] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1399 (1.1554)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:37:34.623842] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1399 (1.1570)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0181  data: 0.0000  max mem: 2802
+[09:37:34.756570] Test: Total time: 0:00:01 (0.0398 s / it)
+[09:37:34.757089] * Acc@1 66.883 Acc@5 97.406 loss 1.157
+[09:37:34.757321] Accuracy of the network on the 2005 test images: 66.9%
+[09:37:34.757607] Max accuracy: 66.88%
+[09:37:34.764543] log_dir: ./output_dir
+[09:37:35.472731] Epoch: [5]  [  0/109]  eta: 0:01:17  lr: 0.010000  training_loss: 1.0907 (1.0907)  mae_loss: 0.0172 (0.0172)  classification_loss: 1.0735 (1.0735)  time: 0.7072  data: 0.5895  max mem: 2802
+[09:37:37.512595] Epoch: [5]  [ 20/109]  eta: 0:00:11  lr: 0.010000  training_loss: 1.1870 (1.1696)  mae_loss: 0.0161 (0.0162)  classification_loss: 1.1707 (1.1534)  time: 0.1019  data: 0.0002  max mem: 2802
+[09:37:39.525084] Epoch: [5]  [ 40/109]  eta: 0:00:08  lr: 0.010000  training_loss: 1.2056 (1.1837)  mae_loss: 0.0154 (0.0159)  classification_loss: 1.1908 (1.1678)  time: 0.1006  data: 0.0002  max mem: 2802
+[09:37:41.546142] Epoch: [5]  [ 60/109]  eta: 0:00:05  lr: 0.009999  training_loss: 1.1688 (1.1858)  mae_loss: 0.0136 (0.0152)  classification_loss: 1.1576 (1.1706)  time: 0.1010  data: 0.0001  max mem: 2802
+[09:37:43.567745] Epoch: [5]  [ 80/109]  eta: 0:00:03  lr: 0.009999  training_loss: 1.1843 (1.1882)  mae_loss: 0.0147 (0.0155)  classification_loss: 1.1687 (1.1727)  time: 0.1010  data: 0.0002  max mem: 2802
+[09:37:45.574993] Epoch: [5]  [100/109]  eta: 0:00:00  lr: 0.009998  training_loss: 1.1570 (1.1887)  mae_loss: 0.0161 (0.0156)  classification_loss: 1.1416 (1.1731)  time: 0.1003  data: 0.0003  max mem: 2802
+[09:37:46.373960] Epoch: [5]  [108/109]  eta: 0:00:00  lr: 0.009997  training_loss: 1.1357 (1.1893)  mae_loss: 0.0154 (0.0156)  classification_loss: 1.1222 (1.1738)  time: 0.0998  data: 0.0003  max mem: 2802
+[09:37:46.516090] Epoch: [5] Total time: 0:00:11 (0.1078 s / it)
+[09:37:46.517186] Averaged stats: lr: 0.009997  training_loss: 1.1357 (1.1893)  mae_loss: 0.0154 (0.0156)  classification_loss: 1.1222 (1.1738)
+[09:37:47.071143] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.1928 (1.1928)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5503  data: 0.5307  max mem: 2802
+[09:37:47.266690] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1670 (1.1504)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0676  data: 0.0487  max mem: 2802
+[09:37:47.454223] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1569 (1.1619)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0190  data: 0.0003  max mem: 2802
+[09:37:47.641996] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1285 (1.1457)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:37:47.650546] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1285 (1.1483)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0181  data: 0.0000  max mem: 2802
+[09:37:47.795820] Test: Total time: 0:00:01 (0.0399 s / it)
+[09:37:47.796205] * Acc@1 66.883 Acc@5 97.406 loss 1.148
+[09:37:47.796400] Accuracy of the network on the 2005 test images: 66.9%
+[09:37:47.796557] Max accuracy: 66.88%
+[09:37:47.803745] log_dir: ./output_dir
+[09:37:48.486320] Epoch: [6]  [  0/109]  eta: 0:01:14  lr: 0.009997  training_loss: 1.0651 (1.0651)  mae_loss: 0.0137 (0.0137)  classification_loss: 1.0514 (1.0514)  time: 0.6815  data: 0.5684  max mem: 2802
+[09:37:50.517553] Epoch: [6]  [ 20/109]  eta: 0:00:11  lr: 0.009996  training_loss: 1.1695 (1.1485)  mae_loss: 0.0151 (0.0159)  classification_loss: 1.1538 (1.1326)  time: 0.1015  data: 0.0002  max mem: 2802
+[09:37:52.542804] Epoch: [6]  [ 40/109]  eta: 0:00:07  lr: 0.009995  training_loss: 1.2000 (1.1703)  mae_loss: 0.0151 (0.0157)  classification_loss: 1.1849 (1.1546)  time: 0.1012  data: 0.0002  max mem: 2802
+[09:37:54.574619] Epoch: [6]  [ 60/109]  eta: 0:00:05  lr: 0.009993  training_loss: 1.1727 (1.1757)  mae_loss: 0.0148 (0.0156)  classification_loss: 1.1567 (1.1601)  time: 0.1015  data: 0.0002  max mem: 2802
+[09:37:56.602889] Epoch: [6]  [ 80/109]  eta: 0:00:03  lr: 0.009992  training_loss: 1.1654 (1.1793)  mae_loss: 0.0148 (0.0154)  classification_loss: 1.1518 (1.1639)  time: 0.1014  data: 0.0002  max mem: 2802
+[09:37:58.634889] Epoch: [6]  [100/109]  eta: 0:00:00  lr: 0.009990  training_loss: 1.1428 (1.1797)  mae_loss: 0.0139 (0.0151)  classification_loss: 1.1291 (1.1646)  time: 0.1015  data: 0.0001  max mem: 2802
+[09:37:59.447143] Epoch: [6]  [108/109]  eta: 0:00:00  lr: 0.009989  training_loss: 1.1333 (1.1809)  mae_loss: 0.0135 (0.0150)  classification_loss: 1.1205 (1.1659)  time: 0.1017  data: 0.0001  max mem: 2802
+[09:37:59.598654] Epoch: [6] Total time: 0:00:11 (0.1082 s / it)
+[09:37:59.599090] Averaged stats: lr: 0.009989  training_loss: 1.1333 (1.1809)  mae_loss: 0.0135 (0.0150)  classification_loss: 1.1205 (1.1659)
+[09:38:00.177538] Test:  [ 0/32]  eta: 0:00:18  testing_loss: 1.1867 (1.1867)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5753  data: 0.5556  max mem: 2802
+[09:38:00.375004] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1633 (1.1433)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0701  data: 0.0506  max mem: 2802
+[09:38:00.562602] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1499 (1.1545)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0191  data: 0.0001  max mem: 2802
+[09:38:00.751101] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1217 (1.1378)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:38:00.759579] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1217 (1.1404)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0182  data: 0.0000  max mem: 2802
+[09:38:00.899983] Test: Total time: 0:00:01 (0.0406 s / it)
+[09:38:00.900348] * Acc@1 66.883 Acc@5 97.406 loss 1.140
+[09:38:00.900643] Accuracy of the network on the 2005 test images: 66.9%
+[09:38:00.900786] Max accuracy: 66.88%
+[09:38:01.382951] log_dir: ./output_dir
+[09:38:02.109635] Epoch: [7]  [  0/109]  eta: 0:01:19  lr: 0.009989  training_loss: 1.0652 (1.0652)  mae_loss: 0.0114 (0.0114)  classification_loss: 1.0538 (1.0538)  time: 0.7253  data: 0.6072  max mem: 2802
+[09:38:04.136365] Epoch: [7]  [ 20/109]  eta: 0:00:11  lr: 0.009987  training_loss: 1.1535 (1.1449)  mae_loss: 0.0133 (0.0133)  classification_loss: 1.1418 (1.1316)  time: 0.1013  data: 0.0002  max mem: 2802
+[09:38:06.176026] Epoch: [7]  [ 40/109]  eta: 0:00:08  lr: 0.009985  training_loss: 1.1806 (1.1658)  mae_loss: 0.0138 (0.0137)  classification_loss: 1.1662 (1.1521)  time: 0.1019  data: 0.0001  max mem: 2802
+[09:38:08.205984] Epoch: [7]  [ 60/109]  eta: 0:00:05  lr: 0.009982  training_loss: 1.1588 (1.1715)  mae_loss: 0.0142 (0.0140)  classification_loss: 1.1427 (1.1575)  time: 0.1014  data: 0.0002  max mem: 2802
+[09:38:10.242233] Epoch: [7]  [ 80/109]  eta: 0:00:03  lr: 0.009980  training_loss: 1.1708 (1.1757)  mae_loss: 0.0157 (0.0144)  classification_loss: 1.1551 (1.1613)  time: 0.1018  data: 0.0002  max mem: 2802
+[09:38:12.267219] Epoch: [7]  [100/109]  eta: 0:00:00  lr: 0.009977  training_loss: 1.1610 (1.1776)  mae_loss: 0.0172 (0.0150)  classification_loss: 1.1425 (1.1627)  time: 0.1012  data: 0.0003  max mem: 2802
+[09:38:13.073805] Epoch: [7]  [108/109]  eta: 0:00:00  lr: 0.009976  training_loss: 1.1373 (1.1789)  mae_loss: 0.0154 (0.0150)  classification_loss: 1.1222 (1.1639)  time: 0.1009  data: 0.0003  max mem: 2802
+[09:38:13.207039] Epoch: [7] Total time: 0:00:11 (0.1085 s / it)
+[09:38:13.207630] Averaged stats: lr: 0.009976  training_loss: 1.1373 (1.1789)  mae_loss: 0.0154 (0.0150)  classification_loss: 1.1222 (1.1639)
+[09:38:13.770206] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.1906 (1.1906)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5591  data: 0.5268  max mem: 2802
+[09:38:13.963487] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1776 (1.1496)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0683  data: 0.0480  max mem: 2802
+[09:38:14.151418] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1528 (1.1597)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0189  data: 0.0001  max mem: 2802
+[09:38:14.339620] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1282 (1.1409)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:38:14.348193] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1282 (1.1436)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0182  data: 0.0000  max mem: 2802
+[09:38:14.497169] Test: Total time: 0:00:01 (0.0402 s / it)
+[09:38:14.497507] * Acc@1 66.883 Acc@5 97.406 loss 1.144
+[09:38:14.497751] Accuracy of the network on the 2005 test images: 66.9%
+[09:38:14.497882] Max accuracy: 66.88%
+[09:38:14.504816] log_dir: ./output_dir
+[09:38:15.209691] Epoch: [8]  [  0/109]  eta: 0:01:16  lr: 0.009975  training_loss: 1.0668 (1.0668)  mae_loss: 0.0162 (0.0162)  classification_loss: 1.0506 (1.0506)  time: 0.7037  data: 0.5879  max mem: 2802
+[09:38:17.222554] Epoch: [8]  [ 20/109]  eta: 0:00:11  lr: 0.009972  training_loss: 1.1733 (1.1496)  mae_loss: 0.0155 (0.0156)  classification_loss: 1.1576 (1.1340)  time: 0.1006  data: 0.0002  max mem: 2802
+[09:38:19.231405] Epoch: [8]  [ 40/109]  eta: 0:00:07  lr: 0.009969  training_loss: 1.1943 (1.1680)  mae_loss: 0.0132 (0.0146)  classification_loss: 1.1770 (1.1534)  time: 0.1004  data: 0.0002  max mem: 2802
+[09:38:21.249349] Epoch: [8]  [ 60/109]  eta: 0:00:05  lr: 0.009966  training_loss: 1.1683 (1.1731)  mae_loss: 0.0141 (0.0143)  classification_loss: 1.1542 (1.1588)  time: 0.1008  data: 0.0002  max mem: 2802
+[09:38:23.270373] Epoch: [8]  [ 80/109]  eta: 0:00:03  lr: 0.009962  training_loss: 1.1571 (1.1756)  mae_loss: 0.0134 (0.0141)  classification_loss: 1.1456 (1.1615)  time: 0.1010  data: 0.0001  max mem: 2802
+[09:38:25.293502] Epoch: [8]  [100/109]  eta: 0:00:00  lr: 0.009958  training_loss: 1.1486 (1.1757)  mae_loss: 0.0128 (0.0139)  classification_loss: 1.1347 (1.1618)  time: 0.1011  data: 0.0001  max mem: 2802
+[09:38:26.105896] Epoch: [8]  [108/109]  eta: 0:00:00  lr: 0.009957  training_loss: 1.1359 (1.1764)  mae_loss: 0.0127 (0.0138)  classification_loss: 1.1232 (1.1627)  time: 0.1011  data: 0.0001  max mem: 2802
+[09:38:26.262521] Epoch: [8] Total time: 0:00:11 (0.1079 s / it)
+[09:38:26.263895] Averaged stats: lr: 0.009957  training_loss: 1.1359 (1.1764)  mae_loss: 0.0127 (0.0138)  classification_loss: 1.1232 (1.1627)
+[09:38:26.814735] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.1470 (1.1470)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5472  data: 0.5270  max mem: 2802
+[09:38:27.006702] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1364 (1.1114)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0670  data: 0.0480  max mem: 2802
+[09:38:27.195042] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1164 (1.1187)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0188  data: 0.0001  max mem: 2802
+[09:38:27.383253] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.0893 (1.1037)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:38:27.392068] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.0893 (1.1061)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0181  data: 0.0000  max mem: 2802
+[09:38:27.527084] Test: Total time: 0:00:01 (0.0394 s / it)
+[09:38:27.528148] * Acc@1 66.883 Acc@5 97.406 loss 1.106
+[09:38:27.528650] Accuracy of the network on the 2005 test images: 66.9%
+[09:38:27.529048] Max accuracy: 66.88%
+[09:38:27.536781] log_dir: ./output_dir
+[09:38:28.234936] Epoch: [9]  [  0/109]  eta: 0:01:15  lr: 0.009956  training_loss: 1.0686 (1.0686)  mae_loss: 0.0118 (0.0118)  classification_loss: 1.0567 (1.0567)  time: 0.6967  data: 0.5788  max mem: 2802
+[09:38:30.261384] Epoch: [9]  [ 20/109]  eta: 0:00:11  lr: 0.009952  training_loss: 1.1515 (1.1418)  mae_loss: 0.0119 (0.0122)  classification_loss: 1.1406 (1.1297)  time: 0.1013  data: 0.0001  max mem: 2802
+[09:38:32.297164] Epoch: [9]  [ 40/109]  eta: 0:00:08  lr: 0.009948  training_loss: 1.1618 (1.1590)  mae_loss: 0.0127 (0.0125)  classification_loss: 1.1519 (1.1464)  time: 0.1017  data: 0.0002  max mem: 2802
+[09:38:34.328592] Epoch: [9]  [ 60/109]  eta: 0:00:05  lr: 0.009944  training_loss: 1.1636 (1.1647)  mae_loss: 0.0160 (0.0138)  classification_loss: 1.1429 (1.1509)  time: 0.1015  data: 0.0002  max mem: 2802
+[09:38:36.348669] Epoch: [9]  [ 80/109]  eta: 0:00:03  lr: 0.009939  training_loss: 1.1371 (1.1678)  mae_loss: 0.0140 (0.0138)  classification_loss: 1.1248 (1.1540)  time: 0.1009  data: 0.0001  max mem: 2802
+[09:38:38.378064] Epoch: [9]  [100/109]  eta: 0:00:00  lr: 0.009934  training_loss: 1.1457 (1.1685)  mae_loss: 0.0157 (0.0142)  classification_loss: 1.1289 (1.1543)  time: 0.1014  data: 0.0001  max mem: 2802
+[09:38:39.184904] Epoch: [9]  [108/109]  eta: 0:00:00  lr: 0.009932  training_loss: 1.1245 (1.1696)  mae_loss: 0.0153 (0.0142)  classification_loss: 1.1098 (1.1554)  time: 0.1011  data: 0.0001  max mem: 2802
+[09:38:39.333520] Epoch: [9] Total time: 0:00:11 (0.1082 s / it)
+[09:38:39.333971] Averaged stats: lr: 0.009932  training_loss: 1.1245 (1.1696)  mae_loss: 0.0153 (0.0142)  classification_loss: 1.1098 (1.1554)
+[09:38:39.905218] Test:  [ 0/32]  eta: 0:00:18  testing_loss: 1.0853 (1.0853)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5680  data: 0.5480  max mem: 2802
+[09:38:40.096619] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.0853 (1.0736)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0689  data: 0.0499  max mem: 2802
+[09:38:40.284744] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.0793 (1.0817)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0189  data: 0.0001  max mem: 2802
+[09:38:40.472691] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.0483 (1.0604)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:38:40.481035] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.0483 (1.0622)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0182  data: 0.0000  max mem: 2802
+[09:38:40.631010] Test: Total time: 0:00:01 (0.0405 s / it)
+[09:38:40.631641] * Acc@1 66.883 Acc@5 97.406 loss 1.062
+[09:38:40.631966] Accuracy of the network on the 2005 test images: 66.9%
+[09:38:40.632100] Max accuracy: 66.88%
+[09:38:40.949508] log_dir: ./output_dir
+[09:38:41.644650] Epoch: [10]  [  0/109]  eta: 0:01:15  lr: 0.009932  training_loss: 1.0698 (1.0698)  mae_loss: 0.0155 (0.0155)  classification_loss: 1.0543 (1.0543)  time: 0.6938  data: 0.5828  max mem: 2802
+[09:38:43.675781] Epoch: [10]  [ 20/109]  eta: 0:00:11  lr: 0.009927  training_loss: 1.1152 (1.1204)  mae_loss: 0.0127 (0.0128)  classification_loss: 1.1025 (1.1076)  time: 0.1015  data: 0.0001  max mem: 2802
+[09:38:45.695443] Epoch: [10]  [ 40/109]  eta: 0:00:07  lr: 0.009921  training_loss: 1.1783 (1.1457)  mae_loss: 0.0119 (0.0126)  classification_loss: 1.1649 (1.1332)  time: 0.1009  data: 0.0001  max mem: 2802
+[09:38:47.714618] Epoch: [10]  [ 60/109]  eta: 0:00:05  lr: 0.009916  training_loss: 1.1710 (1.1578)  mae_loss: 0.0134 (0.0130)  classification_loss: 1.1556 (1.1448)  time: 0.1009  data: 0.0001  max mem: 2802
+[09:38:49.745102] Epoch: [10]  [ 80/109]  eta: 0:00:03  lr: 0.009910  training_loss: 1.1758 (1.1641)  mae_loss: 0.0138 (0.0133)  classification_loss: 1.1627 (1.1508)  time: 0.1015  data: 0.0002  max mem: 2802
+[09:38:51.762623] Epoch: [10]  [100/109]  eta: 0:00:00  lr: 0.009905  training_loss: 1.1466 (1.1648)  mae_loss: 0.0128 (0.0132)  classification_loss: 1.1337 (1.1516)  time: 0.1008  data: 0.0004  max mem: 2802
+[09:38:52.568705] Epoch: [10]  [108/109]  eta: 0:00:00  lr: 0.009902  training_loss: 1.1118 (1.1658)  mae_loss: 0.0120 (0.0130)  classification_loss: 1.0997 (1.1528)  time: 0.1007  data: 0.0004  max mem: 2802
+[09:38:52.729144] Epoch: [10] Total time: 0:00:11 (0.1081 s / it)
+[09:38:52.729525] Averaged stats: lr: 0.009902  training_loss: 1.1118 (1.1658)  mae_loss: 0.0120 (0.0130)  classification_loss: 1.0997 (1.1528)
+[09:38:54.763711] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.0595 (1.0595)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5588  data: 0.5389  max mem: 2802
+[09:38:54.953773] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.0667 (1.0578)  acc1: 65.6250 (66.4773)  acc5: 96.8750 (97.0170)  time: 0.0680  data: 0.0491  max mem: 2802
+[09:38:55.141556] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.0667 (1.0636)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (96.6518)  time: 0.0188  data: 0.0001  max mem: 2802
+[09:38:55.329392] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.0390 (1.0495)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.0766)  time: 0.0187  data: 0.0000  max mem: 2802
+[09:38:55.337842] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.0390 (1.0521)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.0574)  time: 0.0181  data: 0.0000  max mem: 2802
+[09:38:55.463448] Test: Total time: 0:00:01 (0.0394 s / it)
+[09:38:55.464424] * Acc@1 66.883 Acc@5 97.057 loss 1.052
+[09:38:55.464931] Accuracy of the network on the 2005 test images: 66.9%
+[09:38:55.465323] Max accuracy: 66.88%
+[09:38:55.472303] log_dir: ./output_dir
+[09:38:56.194153] Epoch: [11]  [  0/109]  eta: 0:01:18  lr: 0.009902  training_loss: 1.0625 (1.0625)  mae_loss: 0.0129 (0.0129)  classification_loss: 1.0496 (1.0496)  time: 0.7185  data: 0.6076  max mem: 2802
+[09:38:58.199110] Epoch: [11]  [ 20/109]  eta: 0:00:11  lr: 0.009896  training_loss: 1.1562 (1.1436)  mae_loss: 0.0140 (0.0138)  classification_loss: 1.1415 (1.1298)  time: 0.1002  data: 0.0002  max mem: 2802
+[09:39:00.222062] Epoch: [11]  [ 40/109]  eta: 0:00:07  lr: 0.009890  training_loss: 1.1944 (1.1629)  mae_loss: 0.0124 (0.0134)  classification_loss: 1.1833 (1.1495)  time: 0.1011  data: 0.0002  max mem: 2802
+[09:39:02.247287] Epoch: [11]  [ 60/109]  eta: 0:00:05  lr: 0.009883  training_loss: 1.1628 (1.1694)  mae_loss: 0.0126 (0.0131)  classification_loss: 1.1514 (1.1563)  time: 0.1012  data: 0.0002  max mem: 2802
+[09:39:04.273328] Epoch: [11]  [ 80/109]  eta: 0:00:03  lr: 0.009877  training_loss: 1.1692 (1.1728)  mae_loss: 0.0128 (0.0131)  classification_loss: 1.1553 (1.1598)  time: 0.1012  data: 0.0002  max mem: 2802
+[09:39:06.271429] Epoch: [11]  [100/109]  eta: 0:00:00  lr: 0.009870  training_loss: 1.1451 (1.1732)  mae_loss: 0.0122 (0.0129)  classification_loss: 1.1330 (1.1602)  time: 0.0998  data: 0.0001  max mem: 2802
+[09:39:07.070606] Epoch: [11]  [108/109]  eta: 0:00:00  lr: 0.009867  training_loss: 1.1244 (1.1741)  mae_loss: 0.0133 (0.0129)  classification_loss: 1.1084 (1.1612)  time: 0.0997  data: 0.0001  max mem: 2802
+[09:39:07.222980] Epoch: [11] Total time: 0:00:11 (0.1078 s / it)
+[09:39:07.223367] Averaged stats: lr: 0.009867  training_loss: 1.1244 (1.1741)  mae_loss: 0.0133 (0.0129)  classification_loss: 1.1084 (1.1612)
+[09:39:07.769186] Test:  [ 0/32]  eta: 0:00:17  testing_loss: 1.1647 (1.1647)  acc1: 64.0625 (64.0625)  acc5: 96.8750 (96.8750)  time: 0.5427  data: 0.5217  max mem: 2802
+[09:39:07.959834] Test:  [10/32]  eta: 0:00:01  testing_loss: 1.1619 (1.1327)  acc1: 65.6250 (66.4773)  acc5: 98.4375 (97.4432)  time: 0.0665  data: 0.0475  max mem: 2802
+[09:39:08.148307] Test:  [20/32]  eta: 0:00:00  testing_loss: 1.1327 (1.1399)  acc1: 67.1875 (66.1458)  acc5: 96.8750 (97.0238)  time: 0.0188  data: 0.0001  max mem: 2802
+[09:39:08.336975] Test:  [30/32]  eta: 0:00:00  testing_loss: 1.1184 (1.1214)  acc1: 67.1875 (66.9355)  acc5: 98.4375 (97.4294)  time: 0.0188  data: 0.0001  max mem: 2802
+[09:39:08.346394] Test:  [31/32]  eta: 0:00:00  testing_loss: 1.1184 (1.1238)  acc1: 67.1875 (66.8828)  acc5: 98.4375 (97.4065)  time: 0.0183  data: 0.0001  max mem: 2802
+[09:39:08.480160] Test: Total time: 0:00:01 (0.0392 s / it)
+[09:39:08.480572] * Acc@1 66.883 Acc@5 97.406 loss 1.124
+[09:39:08.480811] Accuracy of the network on the 2005 test images: 66.9%
+[09:39:08.480955] Max accuracy: 66.88%
+[09:39:08.490575] log_dir: ./output_dir
+[09:39:09.173668] Epoch: [12]  [  0/109]  eta: 0:01:14  lr: 0.009867  training_loss: 1.0717 (1.0717)  mae_loss: 0.0099 (0.0099)  classification_loss: 1.0618 (1.0618)  time: 0.6820  data: 0.5727  max mem: 2802
+[09:39:11.204882] Epoch: [12]  [ 20/109]  eta: 0:00:11  lr: 0.009860  training_loss: 1.1693 (1.1480)  mae_loss: 0.0127 (0.0125)  classification_loss: 1.1555 (1.1355)  time: 0.1015  data: 0.0001  max mem: 2802
+[09:39:13.224553] Epoch: [12]  [ 40/109]  eta: 0:00:07  lr: 0.009852  training_loss: 1.1855 (1.1630)  mae_loss: 0.0115 (0.0122)  classification_loss: 1.1725 (1.1507)  time: 0.1009  data: 0.0002  max mem: 2802
+[09:39:15.254512] Epoch: [12]  [ 60/109]  eta: 0:00:05  lr: 0.009845  training_loss: 1.1608 (1.1691)  mae_loss: 0.0129 (0.0125)  classification_loss: 1.1452 (1.1566)  time: 0.1014  data: 0.0001  max mem: 2802
+[09:39:15.492847] Loss is nan, stopping training

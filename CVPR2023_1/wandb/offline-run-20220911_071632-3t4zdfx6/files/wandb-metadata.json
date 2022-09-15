@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.4.0-122-generic-x86_64-with-glibc2.31",
+    "python": "3.9.13",
+    "heartbeatAt": "2022-09-11T07:16:32.785418",
+    "startedAt": "2022-09-11T07:16:32.680712",
+    "docker": null,
+    "gpu": "Quadro RTX 5000",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/notebooks/CVPR2023/main_two_branch.py",
+    "codePath": "main_two_branch.py",
+    "git": {
+        "remote": "https://github.com/tanmayj2020/CVPR2023",
+        "commit": "398f66cb42123c153181289a6b124c6b70f35b31"
+    },
+    "email": null,
+    "root": "/notebooks/CVPR2023",
+    "host": "n9esf0bjfl",
+    "username": "root",
+    "executable": "/usr/local/bin/python"
+}

@@ -1,0 +1,31 @@
+2022-09-02 11:37:42,146 INFO    MainThread:1581 [wandb_setup.py:_flush():76] Configure stats pid to 1581
+2022-09-02 11:37:42,149 INFO    MainThread:1581 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2022-09-02 11:37:42,151 INFO    MainThread:1581 [wandb_setup.py:_flush():76] Loading settings from /notebooks/CVPR2023/wandb/settings
+2022-09-02 11:37:42,152 INFO    MainThread:1581 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-09-02 11:37:42,153 INFO    MainThread:1581 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'main_two_branch.py', 'program': '/notebooks/CVPR2023/main_two_branch.py'}
+2022-09-02 11:37:42,154 INFO    MainThread:1581 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2022-09-02 11:37:42,156 INFO    MainThread:1581 [wandb_init.py:_log_setup():461] Logging user logs to /notebooks/CVPR2023/wandb/offline-run-20220902_113741-p5pn22gs/logs/debug.log
+2022-09-02 11:37:42,157 INFO    MainThread:1581 [wandb_init.py:_log_setup():462] Logging internal logs to /notebooks/CVPR2023/wandb/offline-run-20220902_113741-p5pn22gs/logs/debug-internal.log
+2022-09-02 11:37:42,158 INFO    MainThread:1581 [wandb_init.py:init():495] calling init triggers
+2022-09-02 11:37:42,159 INFO    MainThread:1581 [wandb_init.py:init():498] wandb.init called with sweep_config: {}
+config: {}
+2022-09-02 11:37:42,160 INFO    MainThread:1581 [wandb_init.py:init():548] starting backend
+2022-09-02 11:37:42,162 INFO    MainThread:1581 [wandb_init.py:init():552] setting up manager
+2022-09-02 11:37:42,166 INFO    MainThread:1581 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-09-02 11:37:42,169 INFO    MainThread:1581 [wandb_init.py:init():558] backend started and connected
+2022-09-02 11:37:42,175 INFO    MainThread:1581 [wandb_init.py:init():636] updated telemetry
+2022-09-02 11:37:42,190 INFO    MainThread:1581 [wandb_init.py:init():700] starting run threads in backend
+2022-09-02 11:37:42,436 INFO    MainThread:1581 [wandb_run.py:_console_start():1962] atexit reg
+2022-09-02 11:37:42,438 INFO    MainThread:1581 [wandb_run.py:_redirect():1820] redirect: SettingsConsole.WRAP_RAW
+2022-09-02 11:37:42,440 INFO    MainThread:1581 [wandb_run.py:_redirect():1885] Wrapping output streams.
+2022-09-02 11:37:42,441 INFO    MainThread:1581 [wandb_run.py:_redirect():1907] Redirects installed.
+2022-09-02 11:37:42,443 INFO    MainThread:1581 [wandb_init.py:init():732] run started, returning control to user process
+2022-09-02 11:37:42,445 INFO    MainThread:1581 [wandb_config.py:__setitem__():149] config set dataset = None - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f538ba751f0>>
+2022-09-02 11:37:42,446 INFO    MainThread:1581 [wandb_run.py:_config_callback():1152] config_cb dataset None None
+2022-09-02 11:37:42,448 INFO    MainThread:1581 [wandb_config.py:__setitem__():149] config set model = mae_vit_tiny - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f538ba751f0>>
+2022-09-02 11:37:42,449 INFO    MainThread:1581 [wandb_run.py:_config_callback():1152] config_cb model mae_vit_tiny None
+2022-09-02 11:37:42,451 INFO    MainThread:1581 [wandb_config.py:__setitem__():149] config set epoch = 100 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f538ba751f0>>
+2022-09-02 11:37:42,452 INFO    MainThread:1581 [wandb_run.py:_config_callback():1152] config_cb epoch 100 None
+2022-09-02 11:37:42,454 INFO    MainThread:1581 [wandb_config.py:__setitem__():149] config set classification_loss_ratio = 0.9 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f538ba751f0>>
+2022-09-02 11:37:42,456 INFO    MainThread:1581 [wandb_run.py:_config_callback():1152] config_cb classification_loss_ratio 0.9 None
+2022-09-02 11:37:50,552 WARNING MsgRouterThr:1581 [router.py:message_loop():76] message_loop has been closed

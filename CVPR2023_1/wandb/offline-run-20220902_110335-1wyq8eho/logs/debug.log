@@ -1,0 +1,31 @@
+2022-09-02 11:03:35,909 INFO    MainThread:382 [wandb_setup.py:_flush():76] Configure stats pid to 382
+2022-09-02 11:03:35,913 INFO    MainThread:382 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2022-09-02 11:03:35,914 INFO    MainThread:382 [wandb_setup.py:_flush():76] Loading settings from /notebooks/CVPR2023/wandb/settings
+2022-09-02 11:03:35,916 INFO    MainThread:382 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-09-02 11:03:35,918 INFO    MainThread:382 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'main_two_branch.py', 'program': '/notebooks/CVPR2023/main_two_branch.py'}
+2022-09-02 11:03:35,919 INFO    MainThread:382 [wandb_setup.py:_flush():76] Applying login settings: {'mode': 'offline'}
+2022-09-02 11:03:35,921 INFO    MainThread:382 [wandb_init.py:_log_setup():461] Logging user logs to /notebooks/CVPR2023/wandb/offline-run-20220902_110335-1wyq8eho/logs/debug.log
+2022-09-02 11:03:35,922 INFO    MainThread:382 [wandb_init.py:_log_setup():462] Logging internal logs to /notebooks/CVPR2023/wandb/offline-run-20220902_110335-1wyq8eho/logs/debug-internal.log
+2022-09-02 11:03:35,924 INFO    MainThread:382 [wandb_init.py:init():495] calling init triggers
+2022-09-02 11:03:35,925 INFO    MainThread:382 [wandb_init.py:init():498] wandb.init called with sweep_config: {}
+config: {}
+2022-09-02 11:03:35,927 INFO    MainThread:382 [wandb_init.py:init():548] starting backend
+2022-09-02 11:03:35,928 INFO    MainThread:382 [wandb_init.py:init():552] setting up manager
+2022-09-02 11:03:35,933 INFO    MainThread:382 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-09-02 11:03:35,937 INFO    MainThread:382 [wandb_init.py:init():558] backend started and connected
+2022-09-02 11:03:35,943 INFO    MainThread:382 [wandb_init.py:init():636] updated telemetry
+2022-09-02 11:03:35,958 INFO    MainThread:382 [wandb_init.py:init():700] starting run threads in backend
+2022-09-02 11:03:36,172 INFO    MainThread:382 [wandb_run.py:_console_start():1962] atexit reg
+2022-09-02 11:03:36,174 INFO    MainThread:382 [wandb_run.py:_redirect():1820] redirect: SettingsConsole.WRAP_RAW
+2022-09-02 11:03:36,176 INFO    MainThread:382 [wandb_run.py:_redirect():1885] Wrapping output streams.
+2022-09-02 11:03:36,178 INFO    MainThread:382 [wandb_run.py:_redirect():1907] Redirects installed.
+2022-09-02 11:03:36,180 INFO    MainThread:382 [wandb_init.py:init():732] run started, returning control to user process
+2022-09-02 11:03:36,181 INFO    MainThread:382 [wandb_config.py:__setitem__():149] config set dataset = None - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f948fa29670>>
+2022-09-02 11:03:36,183 INFO    MainThread:382 [wandb_run.py:_config_callback():1152] config_cb dataset None None
+2022-09-02 11:03:36,184 INFO    MainThread:382 [wandb_config.py:__setitem__():149] config set model = mae_vit_base - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f948fa29670>>
+2022-09-02 11:03:36,186 INFO    MainThread:382 [wandb_run.py:_config_callback():1152] config_cb model mae_vit_base None
+2022-09-02 11:03:36,187 INFO    MainThread:382 [wandb_config.py:__setitem__():149] config set epoch = 100 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f948fa29670>>
+2022-09-02 11:03:36,189 INFO    MainThread:382 [wandb_run.py:_config_callback():1152] config_cb epoch 100 None
+2022-09-02 11:03:36,190 INFO    MainThread:382 [wandb_config.py:__setitem__():149] config set classification_loss_ratio = 0.9 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f948fa29670>>
+2022-09-02 11:03:36,192 INFO    MainThread:382 [wandb_run.py:_config_callback():1152] config_cb classification_loss_ratio 0.9 None
+2022-09-02 11:03:46,360 WARNING MsgRouterThr:382 [router.py:message_loop():76] message_loop has been closed

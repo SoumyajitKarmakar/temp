@@ -1,0 +1,172 @@
+2022-09-12 17:16:01,946 INFO    StreamThr :325 [internal.py:wandb_internal():88] W&B internal server running at pid: 325, started at: 2022-09-12 17:16:01.945287
+2022-09-12 17:16:01,949 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: status
+2022-09-12 17:16:01,950 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: status
+2022-09-12 17:16:01,954 DEBUG   SenderThread:325 [sender.py:send():301] send: header
+2022-09-12 17:16:01,954 INFO    WriterThread:325 [datastore.py:open_for_write():75] open: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/run-1p8ixmhg.wandb
+2022-09-12 17:16:01,964 DEBUG   SenderThread:325 [sender.py:send():301] send: run
+2022-09-12 17:16:02,162 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: check_version
+2022-09-12 17:16:02,413 INFO    SenderThread:325 [dir_watcher.py:__init__():216] watching files in: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files
+2022-09-12 17:16:02,414 INFO    SenderThread:325 [sender.py:_start_run_threads():912] run started: 1p8ixmhg with start time 1663002961.942308
+2022-09-12 17:16:02,414 DEBUG   SenderThread:325 [sender.py:send():301] send: summary
+2022-09-12 17:16:02,415 INFO    SenderThread:325 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-09-12 17:16:02,415 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: check_version
+2022-09-12 17:16:02,464 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: run_start
+2022-09-12 17:16:02,476 DEBUG   HandlerThread:325 [meta.py:__init__():34] meta init
+2022-09-12 17:16:02,477 DEBUG   HandlerThread:325 [meta.py:__init__():49] meta init done
+2022-09-12 17:16:02,477 DEBUG   HandlerThread:325 [meta.py:probe():215] probe
+2022-09-12 17:16:02,484 DEBUG   HandlerThread:325 [meta.py:_setup_git():205] setup git
+2022-09-12 17:16:02,505 DEBUG   HandlerThread:325 [meta.py:_setup_git():212] setup git done
+2022-09-12 17:16:02,505 DEBUG   HandlerThread:325 [meta.py:_save_pip():53] save pip
+2022-09-12 17:16:02,506 DEBUG   HandlerThread:325 [meta.py:_save_pip():67] save pip done
+2022-09-12 17:16:02,506 DEBUG   HandlerThread:325 [meta.py:probe():253] probe done
+2022-09-12 17:16:02,605 DEBUG   SenderThread:325 [sender.py:send():301] send: files
+2022-09-12 17:16:02,605 INFO    SenderThread:325 [sender.py:_save_file():1155] saving file wandb-metadata.json with policy now
+2022-09-12 17:16:02,613 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: stop_status
+2022-09-12 17:16:02,615 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: stop_status
+2022-09-12 17:16:02,675 DEBUG   SenderThread:325 [sender.py:send():301] send: telemetry
+2022-09-12 17:16:02,676 DEBUG   SenderThread:325 [sender.py:send():301] send: telemetry
+2022-09-12 17:16:02,676 DEBUG   SenderThread:325 [sender.py:send():301] send: config
+2022-09-12 17:16:02,676 DEBUG   SenderThread:325 [sender.py:send():301] send: config
+2022-09-12 17:16:02,676 DEBUG   SenderThread:325 [sender.py:send():301] send: config
+2022-09-12 17:16:02,676 DEBUG   SenderThread:325 [sender.py:send():301] send: config
+2022-09-12 17:16:02,968 INFO    Thread-17 :325 [upload_job.py:push():139] Uploaded file /tmp/tmpyohi0lm7wandb/2wqba0il-wandb-metadata.json
+2022-09-12 17:16:03,431 INFO    Thread-13 :325 [dir_watcher.py:_on_file_created():275] file/dir created: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/requirements.txt
+2022-09-12 17:16:03,432 INFO    Thread-13 :325 [dir_watcher.py:_on_file_created():275] file/dir created: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:03,432 INFO    Thread-13 :325 [dir_watcher.py:_on_file_created():275] file/dir created: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-metadata.json
+2022-09-12 17:16:03,432 INFO    Thread-13 :325 [dir_watcher.py:_on_file_created():275] file/dir created: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-summary.json
+2022-09-12 17:16:05,430 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:06,431 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:06,769 DEBUG   SenderThread:325 [sender.py:send():301] send: telemetry
+2022-09-12 17:16:07,431 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:07,489 DEBUG   SenderThread:325 [sender.py:send():301] send: telemetry
+2022-09-12 17:16:07,537 DEBUG   SenderThread:325 [sender.py:send():301] send: telemetry
+2022-09-12 17:16:10,433 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:13,435 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:13,731 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:13,732 DEBUG   SenderThread:325 [sender.py:send():301] send: exit
+2022-09-12 17:16:13,732 INFO    SenderThread:325 [sender.py:send_exit():437] handling exit code: 1
+2022-09-12 17:16:13,732 INFO    SenderThread:325 [sender.py:send_exit():439] handling runtime: 11
+2022-09-12 17:16:14,359 INFO    SenderThread:325 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-09-12 17:16:14,359 INFO    SenderThread:325 [sender.py:send_exit():445] send defer
+2022-09-12 17:16:14,359 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:14,360 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:14,361 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 0
+2022-09-12 17:16:14,361 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:14,361 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 0
+2022-09-12 17:16:14,361 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 1
+2022-09-12 17:16:14,361 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:14,362 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 1
+2022-09-12 17:16:14,435 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-summary.json
+2022-09-12 17:16:14,449 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:14,449 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 1
+2022-09-12 17:16:14,449 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 2
+2022-09-12 17:16:14,449 DEBUG   SenderThread:325 [sender.py:send():301] send: stats
+2022-09-12 17:16:14,450 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:14,450 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 2
+2022-09-12 17:16:14,451 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:14,451 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 2
+2022-09-12 17:16:14,451 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 3
+2022-09-12 17:16:14,451 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:14,452 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 3
+2022-09-12 17:16:14,452 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:14,452 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 3
+2022-09-12 17:16:14,452 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 4
+2022-09-12 17:16:14,452 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:14,453 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 4
+2022-09-12 17:16:14,453 DEBUG   SenderThread:325 [sender.py:send():301] send: summary
+2022-09-12 17:16:14,462 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:14,863 INFO    SenderThread:325 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-09-12 17:16:14,864 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:14,864 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 4
+2022-09-12 17:16:14,864 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 5
+2022-09-12 17:16:14,864 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:14,865 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:14,865 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 5
+2022-09-12 17:16:14,866 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:14,866 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 5
+2022-09-12 17:16:14,967 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:15,379 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 6
+2022-09-12 17:16:15,379 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:15,381 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:15,381 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 6
+2022-09-12 17:16:15,381 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:15,381 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 6
+2022-09-12 17:16:15,436 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:15,436 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/config.yaml
+2022-09-12 17:16:15,436 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-summary.json
+2022-09-12 17:16:15,482 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:16,436 INFO    Thread-13 :325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:17,888 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 7
+2022-09-12 17:16:17,888 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:17,890 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:17,890 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 7
+2022-09-12 17:16:17,890 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:17,890 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 7
+2022-09-12 17:16:17,890 INFO    SenderThread:325 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-09-12 17:16:17,991 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:18,437 INFO    SenderThread:325 [dir_watcher.py:_on_file_modified():292] file/dir modified: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:18,438 INFO    SenderThread:325 [dir_watcher.py:finish():392] scan: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files
+2022-09-12 17:16:18,438 INFO    SenderThread:325 [dir_watcher.py:finish():406] scan save: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/requirements.txt requirements.txt
+2022-09-12 17:16:18,438 INFO    SenderThread:325 [dir_watcher.py:finish():406] scan save: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-metadata.json wandb-metadata.json
+2022-09-12 17:16:18,438 INFO    SenderThread:325 [dir_watcher.py:finish():406] scan save: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-summary.json wandb-summary.json
+2022-09-12 17:16:18,438 INFO    SenderThread:325 [dir_watcher.py:finish():406] scan save: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log output.log
+2022-09-12 17:16:18,442 INFO    SenderThread:325 [dir_watcher.py:finish():406] scan save: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/config.yaml config.yaml
+2022-09-12 17:16:18,449 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 8
+2022-09-12 17:16:18,450 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:18,451 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:18,451 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 8
+2022-09-12 17:16:18,455 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:18,455 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 8
+2022-09-12 17:16:18,455 INFO    SenderThread:325 [file_pusher.py:finish():168] shutting down file pusher
+2022-09-12 17:16:18,558 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:18,558 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:18,660 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:18,661 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:18,763 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:18,763 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:18,819 INFO    Thread-21 :325 [upload_job.py:push():139] Uploaded file /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/config.yaml
+2022-09-12 17:16:18,866 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:18,866 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:18,869 INFO    Thread-20 :325 [upload_job.py:push():139] Uploaded file /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/output.log
+2022-09-12 17:16:18,939 INFO    Thread-19 :325 [upload_job.py:push():139] Uploaded file /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/wandb-summary.json
+2022-09-12 17:16:18,970 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:18,971 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:19,073 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:19,073 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:19,081 INFO    Thread-18 :325 [upload_job.py:push():139] Uploaded file /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/files/requirements.txt
+2022-09-12 17:16:19,175 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:19,176 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:19,278 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:19,278 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:19,282 INFO    Thread-12 :325 [sender.py:transition_state():458] send defer: 9
+2022-09-12 17:16:19,283 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:19,283 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 9
+2022-09-12 17:16:19,283 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:19,284 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 9
+2022-09-12 17:16:19,335 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 10
+2022-09-12 17:16:19,336 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:19,336 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 10
+2022-09-12 17:16:19,336 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:19,336 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 10
+2022-09-12 17:16:19,336 INFO    SenderThread:325 [sender.py:transition_state():458] send defer: 11
+2022-09-12 17:16:19,337 DEBUG   SenderThread:325 [sender.py:send():301] send: final
+2022-09-12 17:16:19,337 DEBUG   SenderThread:325 [sender.py:send():301] send: footer
+2022-09-12 17:16:19,338 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: defer
+2022-09-12 17:16:19,338 INFO    HandlerThread:325 [handler.py:handle_request_defer():161] handle defer: 11
+2022-09-12 17:16:19,338 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: defer
+2022-09-12 17:16:19,338 INFO    SenderThread:325 [sender.py:send_request_defer():454] handle sender defer: 11
+2022-09-12 17:16:19,380 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: poll_exit
+2022-09-12 17:16:19,381 DEBUG   SenderThread:325 [sender.py:send_request():315] send_request: poll_exit
+2022-09-12 17:16:19,381 INFO    SenderThread:325 [file_pusher.py:join():173] waiting for file pusher
+2022-09-12 17:16:19,600 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: sampled_history
+2022-09-12 17:16:19,601 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: get_summary
+2022-09-12 17:16:19,601 INFO    MainThread:325 [wandb_run.py:_footer_history_summary_info():3321] rendering history
+2022-09-12 17:16:19,602 INFO    MainThread:325 [wandb_run.py:_footer_history_summary_info():3353] rendering summary
+2022-09-12 17:16:19,602 INFO    MainThread:325 [wandb_run.py:_footer_sync_info():3277] logging synced files
+2022-09-12 17:16:19,602 DEBUG   HandlerThread:325 [handler.py:handle_request():138] handle_request: shutdown
+2022-09-12 17:16:19,603 INFO    HandlerThread:325 [handler.py:finish():807] shutting down handler
+2022-09-12 17:16:20,338 INFO    WriterThread:325 [datastore.py:close():279] close: /notebooks/CVPR2023/wandb/run-20220912_171601-1p8ixmhg/run-1p8ixmhg.wandb
+2022-09-12 17:16:20,498 INFO    SenderThread:325 [sender.py:finish():1315] shutting down sender
+2022-09-12 17:16:20,498 INFO    SenderThread:325 [file_pusher.py:finish():168] shutting down file pusher
+2022-09-12 17:16:20,498 INFO    SenderThread:325 [file_pusher.py:join():173] waiting for file pusher
+2022-09-12 17:16:20,606 INFO    MainThread:325 [internal.py:handle_exit():78] Internal process exited

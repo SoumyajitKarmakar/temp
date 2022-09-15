@@ -1,0 +1,43 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.3
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.13
+    start_time: 1662921764.116467
+    t:
+      1:
+      - 1
+      - 41
+      - 49
+      - 55
+      - 63
+      2:
+      - 1
+      - 41
+      - 49
+      - 55
+      - 63
+      3:
+      - 19
+      - 23
+      4: 3.9.13
+      5: 0.13.3
+      8:
+      - 5
+classification_loss_ratio:
+  desc: null
+  value: 0.1
+dataset:
+  desc: null
+  value: null
+epoch:
+  desc: null
+  value: 100
+model:
+  desc: null
+  value: mae_vit_tiny

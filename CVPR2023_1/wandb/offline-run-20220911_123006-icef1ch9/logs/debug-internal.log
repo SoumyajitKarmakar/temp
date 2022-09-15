@@ -1,0 +1,19 @@
+2022-09-11 12:30:06,214 INFO    StreamThr :2216 [internal.py:wandb_internal():88] W&B internal server running at pid: 2216, started at: 2022-09-11 12:30:06.206492
+2022-09-11 12:30:06,216 DEBUG   HandlerThread:2216 [handler.py:handle_request():138] handle_request: status
+2022-09-11 12:30:06,218 DEBUG   SenderThread:2216 [sender.py:send_request():315] send_request: status
+2022-09-11 12:30:06,220 INFO    WriterThread:2216 [datastore.py:open_for_write():75] open: /notebooks/CVPR2023/wandb/offline-run-20220911_123006-icef1ch9/run-icef1ch9.wandb
+2022-09-11 12:30:06,248 DEBUG   HandlerThread:2216 [handler.py:handle_request():138] handle_request: run_start
+2022-09-11 12:30:06,259 DEBUG   HandlerThread:2216 [meta.py:__init__():34] meta init
+2022-09-11 12:30:06,259 DEBUG   HandlerThread:2216 [meta.py:__init__():49] meta init done
+2022-09-11 12:30:06,259 DEBUG   HandlerThread:2216 [meta.py:probe():215] probe
+2022-09-11 12:30:06,266 DEBUG   HandlerThread:2216 [meta.py:_setup_git():205] setup git
+2022-09-11 12:30:06,284 DEBUG   HandlerThread:2216 [meta.py:_setup_git():212] setup git done
+2022-09-11 12:30:06,284 DEBUG   HandlerThread:2216 [meta.py:_save_pip():53] save pip
+2022-09-11 12:30:06,286 DEBUG   HandlerThread:2216 [meta.py:_save_pip():67] save pip done
+2022-09-11 12:30:06,286 DEBUG   HandlerThread:2216 [meta.py:probe():253] probe done
+2022-09-11 12:30:15,228 WARNING StreamThr :2216 [internal.py:is_dead():385] Internal process exiting, parent pid 2194 disappeared
+2022-09-11 12:30:15,228 ERROR   StreamThr :2216 [internal.py:wandb_internal():147] Internal process shutdown.
+2022-09-11 12:30:15,615 INFO    WriterThread:2216 [datastore.py:close():279] close: /notebooks/CVPR2023/wandb/offline-run-20220911_123006-icef1ch9/run-icef1ch9.wandb
+2022-09-11 12:30:15,617 INFO    HandlerThread:2216 [handler.py:finish():807] shutting down handler
+2022-09-11 12:30:16,220 INFO    SenderThread:2216 [sender.py:finish():1315] shutting down sender
+2022-09-11 12:30:16,250 INFO    MainThread:2216 [internal.py:handle_exit():78] Internal process exited

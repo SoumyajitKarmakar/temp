@@ -1,0 +1,63 @@
+Not using distributed mode
+[18:42:29.221616] job dir: /notebooks/CVPR2023
+[18:42:29.221869] Namespace(batch_size=64,
+epochs=100,
+accum_iter=1,
+model='mae_vit_tiny',
+norm_pix_loss=False,
+dataset=None,
+input_size=32,
+patch_size=2,
+mask_ratio=0.75,
+lambda_weight=0.1,
+drop_path=0.1,
+clip_grad=None,
+weight_decay=0.05,
+lr=None,
+blr=0.001,
+layer_decay=0.75,
+min_lr=1e-06,
+warmup_epochs=5,
+color_jitter=None,
+aa='rand-m9-mstd0.5-inc1',
+smoothing=0.1,
+reprob=0.25,
+remode='pixel',
+recount=1,
+resplit=False,
+mixup=0,
+cutmix=0,
+cutmix_minmax=None,
+mixup_prob=1.0,
+mixup_switch_prob=0.5,
+mixup_mode='batch',
+finetune='',
+global_pool=True,
+data_path='/datasets01/imagenet_full_size/061417/',
+nb_classes=10,
+output_dir='./output_dir',
+log_dir='./output_dir',
+device='cuda',
+seed=0,
+resume='',
+start_epoch=0,
+eval=False,
+dist_eval=False,
+num_workers=10,
+pin_mem=True,
+world_size=1,
+local_rank=-1,
+dist_on_itp=False,
+dist_url='env://',
+distributed=False)
+[18:42:29.225627] [18:42:29.225954] [18:42:29.226107] [18:42:29.226247] [18:42:29.226387] [18:42:29.226540]
+Traceback (most recent call last):
+  File "/notebooks/CVPR2023/main_two_branch_new.py", line 370, in <module>
+    main(args)
+  File "/notebooks/CVPR2023/main_two_branch_new.py", line 183, in main
+    dataset_train = build_dataset(is_train=True, args=args)
+  File "/notebooks/CVPR2023/util/datasets.py", line 21, in build_dataset
+    transform = build_transform(is_train, args)
+  File "/notebooks/CVPR2023/util/datasets.py", line 54, in build_transform
+    mean=mean,
+UnboundLocalError: local variable 'mean' referenced before assignment
