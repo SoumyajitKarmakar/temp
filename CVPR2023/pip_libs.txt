@@ -1,0 +1,1 @@
+pip install timm==0.4.12 && pip install wandb && pip install munch
